@@ -3,116 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Giveaways Posty78</title>
-<link rel="icon" type="image/png" href="flavicon.png">
+<title>Giveaway Posty78</title>
+<link rel="icon" type="image/png" href="favicon.png">
 
 <style>
 *{box-sizing:border-box}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:
-radial-gradient(circle at top,#184d16 0%,#071207 30%,#020202 70%);
-color:white;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:
+    radial-gradient(circle at top,#153f08 0%,#050505 38%,#000 100%);
+  color:#fff;
 }
 
-.container{max-width:1200px;margin:auto;padding:22px}
+.container{
+  max-width:1150px;
+  margin:auto;
+  padding:22px;
+}
 
 .hero{
-text-align:center;
-padding:70px 18px 45px;
+  text-align:center;
+  padding:42px 18px;
+  border:1px solid #53fc18;
+  border-radius:28px;
+  background:rgba(0,0,0,.72);
+  box-shadow:0 0 35px rgba(83,252,24,.18);
 }
 
-.badge{
-display:inline-block;
-border:1px solid #53fc18;
-color:#53fc18;
-padding:8px 14px;
-border-radius:999px;
-font-weight:bold;
-margin-bottom:18px;
+.site{
+  display:inline-block;
+  border:2px solid #53fc18;
+  border-radius:16px;
+  padding:10px 18px;
+  color:#53fc18;
+  font-weight:900;
+  margin-bottom:20px;
 }
 
-.hero h1{
-font-size:86px;
-margin:0;
-color:#53fc18;
-line-height:0.95;
-text-shadow:0 0 28px rgba(83,252,24,.25);
+h1{
+  font-size:74px;
+  margin:0;
+  line-height:.95;
 }
 
-.hero h2{
-font-size:34px;
-margin:12px 0;
+.green{color:#53fc18}
+
+.subtitle{
+  font-size:28px;
+  font-weight:900;
+  margin-top:16px;
 }
 
-.hero p{
-font-size:20px;
-color:#ccc;
+.notice{
+  margin:24px auto 0;
+  max-width:850px;
+  font-size:22px;
+  line-height:1.4;
+  color:#ddd;
 }
 
-.stats,.grid,.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
+.card{
+  background:rgba(10,10,10,.9);
+  border:1px solid #252525;
+  border-radius:24px;
+  padding:24px;
+  margin-top:22px;
 }
 
-.stat,.reward,.step,.card{
-background:rgba(10,10,10,.88);
-border:1px solid #2b2b2b;
-border-radius:22px;
-padding:22px;
-box-shadow:0 0 25px rgba(0,0,0,.35);
+.card h2{
+  color:#53fc18;
+  margin-top:0;
+  font-size:30px;
 }
 
-.stat{text-align:center}
-.stat strong{
-display:block;
-font-size:34px;
-color:#53fc18;
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
 }
 
-.card{margin-bottom:22px}
-.card h2{color:#53fc18;margin-top:0}
-
-.reward{text-align:center}
-.reward .gain{
-font-size:38px;
-font-weight:900;
-color:#53fc18;
+.step{
+  border:1px solid #53fc18;
+  border-radius:22px;
+  padding:22px;
+  background:#060606;
+  text-align:center;
 }
 
-.step h3{color:#53fc18;margin-top:0}
+.num{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#53fc18;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:-48px auto 16px;
+  font-size:30px;
+  font-weight:900;
+}
+
+.step h3{
+  font-size:24px;
+  margin:0 0 14px;
+}
+
+.icon{
+  font-size:52px;
+  margin:12px 0;
+}
+
+.step p{
+  color:#ddd;
+  line-height:1.5;
+}
+
+.contacts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+
+.contact{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  border-radius:22px;
+  padding:24px;
+  border:1px solid #333;
+  background:#070707;
+}
+
+.contact.discord{
+  border-color:#5865F2;
+}
+
+.contact.insta{
+  border-color:#ff3f8f;
+}
+
+.contact strong{
+  display:block;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.contact span{
+  color:#53fc18;
+  font-size:24px;
+  font-weight:900;
+}
 
 .cta{
-display:block;
-text-align:center;
-background:#53fc18;
-color:#000;
-font-weight:900;
-font-size:24px;
-padding:22px;
-border-radius:18px;
-text-decoration:none;
-margin:28px auto 0;
-max-width:520px;
-box-shadow:0 0 28px rgba(83,252,24,.35);
+  display:block;
+  text-align:center;
+  background:#53fc18;
+  color:#000;
+  text-decoration:none;
+  border-radius:20px;
+  padding:22px;
+  font-size:28px;
+  font-weight:900;
+  box-shadow:0 0 30px rgba(83,252,24,.35);
 }
 
-.highlight{
-border:1px solid #53fc18;
-box-shadow:0 0 30px rgba(83,252,24,.12);
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+
+.stat{
+  background:#070707;
+  border:1px solid #2d2d2d;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:#53fc18;
+  font-size:28px;
+}
+
+.footer{
+  text-align:center;
+  color:#53fc18;
+  font-weight:900;
+  font-size:22px;
+  margin:26px 0 10px;
 }
 
 @media(max-width:700px){
-.container{padding:14px}
-.hero{padding:45px 10px 30px}
-.hero h1{font-size:54px}
-.hero h2{font-size:24px}
-.hero p{font-size:16px}
-.cta{font-size:19px;padding:18px}
+  .container{padding:12px}
+  h1{font-size:44px}
+  .subtitle{font-size:20px}
+  .notice{font-size:17px}
+  .card h2{font-size:24px}
+  .cta{font-size:21px}
 }
 </style>
 </head>
@@ -121,65 +214,84 @@ box-shadow:0 0 30px rgba(83,252,24,.12);
 <div class="container">
 
 <section class="hero">
-<div class="badge">EN LIVE 24/7 SUR KICK.COM/POSTY78</div>
-<h1>70 000€</h1>
-<h2>À GAGNER</h2>
-<p>365 jours sans argent • 1500 McDonald's • Plus de 2200 gagnants</p>
-<a class="cta" href="https://recompense.posty78.fr">VÉRIFIER MON BILLET</a>
+  <div class="site">🔒 giveaway.posty78.fr</div>
+  <h1>FÉLICITATIONS !</h1>
+  <div class="subtitle">TU DÉTIENS UN BILLET DU <span class="green">TOUR DE FRANCE POSTY78</span></div>
+  <p class="notice">
+    Tu as gagné ou trouvé une carte avec un code unique.
+    Suis les étapes ci-dessous pour récupérer ta récompense.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Comment réclamer ton gain ?</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <h3>PRENDS UNE PHOTO</h3>
+      <div class="icon">📸</div>
+      <p>Prends une photo nette de la carte entière. Le code alphanumérique doit être parfaitement visible.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <h3>AJOUTE TON MOYEN DE PAIEMENT</h3>
+      <div class="icon">💳</div>
+      <p>Dans ton message, indique ton moyen de paiement : PayPal ou Revolut.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <h3>ENVOIE TON MESSAGE</h3>
+      <div class="icon">✈️</div>
+      <p>Envoie ta photo + ton moyen de paiement en message privé sur Discord ou Instagram.</p>
+    </div>
+
+    <div class="step">
+      <div class="num">4</div>
+      <h3>ATTENDS LA VALIDATION</h3>
+      <div class="icon">🎁</div>
+      <p>Je vérifie ton billet, je valide, puis je t’envoie ta récompense.</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Tu peux me contacter ici</h2>
+
+  <div class="contacts">
+    <a class="contact discord" href="https://discord.posty78.fr">
+      <strong>DISCORD</strong>
+      MP pseudo : <span>#jd1819</span><br><br>
+      Rejoins le serveur : <span>discord.posty78.fr</span>
+    </a>
+
+    <a class="contact insta" href="https://insta.posty78.fr">
+      <strong>INSTAGRAM</strong>
+      MP : <span>@posty.78</span><br><br>
+      Lien direct : <span>insta.posty78.fr</span>
+    </a>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Consulte la liste des récompenses</h2>
+  <a class="cta" href="https://recompense.posty78.fr">
+    VOIR LES RÉCOMPENSES
+  </a>
 </section>
 
 <section class="stats">
-<div class="stat"><strong>365</strong>jours d'aventure</div>
-<div class="stat"><strong>1500</strong>McDonald's à visiter</div>
-<div class="stat"><strong>2200+</strong>gagnants</div>
-<div class="stat"><strong>24/7</strong>en direct</div>
+  <div class="stat"><strong>365 jours</strong>sans argent</div>
+  <div class="stat"><strong>1500</strong>McDo de France</div>
+  <div class="stat"><strong>24/7</strong>en live sur Kick</div>
+  <div class="stat"><strong>70 000€+</strong>à gagner</div>
 </section>
 
-<section class="card highlight">
-<h2>Le projet</h2>
-<p>
-Pendant 365 jours, Posty78 traverse la France sans argent,
-visite les 1500 McDonald's du pays et distribue plus de
-70 000€ de cadeaux en direct.
-</p>
-</section>
-
-<section class="card">
-<h2>Répartition des billets collectors</h2>
-
-<div class="grid">
-<div class="reward"><div class="gain">500€</div>10 billets</div>
-<div class="reward"><div class="gain">100€</div>40 billets</div>
-<div class="reward"><div class="gain">50€</div>100 billets</div>
-<div class="reward"><div class="gain">30€</div>200 billets</div>
-<div class="reward"><div class="gain">20€</div>500 billets</div>
-<div class="reward"><div class="gain">10€</div>650 billets</div>
+<div class="footer">
+  MERCI DE FAIRE PARTIE DE CETTE INCROYABLE AVENTURE
 </div>
-
-<p style="text-align:center;margin-top:22px;font-size:20px;">
-Tous les billets sont gagnants.
-</p>
-</section>
-
-<section class="card">
-<h2>Comment gagner un billet ?</h2>
-
-<div class="steps">
-<div class="step"><h3>💪 Force</h3>Pompes<br>Haltère bras tendu</div>
-<div class="step"><h3>🎯 Précision</h3>Lancer d'anneaux<br>Lancer de balles</div>
-<div class="step"><h3>🤹 Dextérité</h3>Bottle Flip<br>Empiler 10 dés</div>
-<div class="step"><h3>⚖️ Équilibre</h3>Tenir sur un pied<br>Jonglage balle ping-pong</div>
-</div>
-</section>
-
-<section class="card highlight">
-<h2>Comment réclamer son gain ?</h2>
-<p>1. Prends une photo de ton billet.</p>
-<p>2. Chaque billet possède un numéro unique et un code secret unique.</p>
-<p>3. Vérifie ton billet et suis les instructions de réclamation.</p>
-
-<a class="cta" href="https://recompense.posty78.fr">VÉRIFIER MON BILLET</a>
-</section>
 
 </div>
 </body>
