@@ -5,270 +5,182 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Giveaways Posty78</title>
-<link rel="icon" type="image/png" href="flavicon.png">
-<style>
+<link rel="icon" type="image/png" href="favicon.png">
 
-*{
-box-sizing:border-box;
-}
+<style>
+*{box-sizing:border-box}
 
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#050505,#0b1f0b,#050505);
+background:
+radial-gradient(circle at top,#184d16 0%,#071207 30%,#020202 70%);
 color:white;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+.container{max-width:1200px;margin:auto;padding:22px}
 
 .hero{
 text-align:center;
-padding:60px 20px;
+padding:70px 18px 45px;
+}
+
+.badge{
+display:inline-block;
+border:1px solid #53fc18;
+color:#53fc18;
+padding:8px 14px;
+border-radius:999px;
+font-weight:bold;
+margin-bottom:18px;
 }
 
 .hero h1{
-font-size:70px;
+font-size:86px;
 margin:0;
 color:#53fc18;
+line-height:0.95;
+text-shadow:0 0 28px rgba(83,252,24,.25);
 }
 
 .hero h2{
-font-size:40px;
-margin-top:10px;
-color:white;
+font-size:34px;
+margin:12px 0;
 }
 
 .hero p{
-font-size:22px;
+font-size:20px;
 color:#ccc;
 }
 
-.card{
-background:#111;
-border:1px solid #2b2b2b;
-border-radius:20px;
-padding:25px;
-margin-bottom:20px;
-}
-
-.card h2{
-color:#53fc18;
-margin-top:0;
-}
-
-.grid{
+.stats,.grid,.steps{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
 }
 
-.reward{
-background:#070707;
+.stat,.reward,.step,.card{
+background:rgba(10,10,10,.88);
 border:1px solid #2b2b2b;
-border-radius:15px;
-padding:15px;
-text-align:center;
+border-radius:22px;
+padding:22px;
+box-shadow:0 0 25px rgba(0,0,0,.35);
 }
 
-.reward .gain{
-font-size:32px;
-font-weight:bold;
+.stat{text-align:center}
+.stat strong{
+display:block;
+font-size:34px;
 color:#53fc18;
 }
+
+.card{margin-bottom:22px}
+.card h2{color:#53fc18;margin-top:0}
+
+.reward{text-align:center}
+.reward .gain{
+font-size:38px;
+font-weight:900;
+color:#53fc18;
+}
+
+.step h3{color:#53fc18;margin-top:0}
 
 .cta{
 display:block;
 text-align:center;
 background:#53fc18;
-color:black;
-font-weight:bold;
+color:#000;
+font-weight:900;
 font-size:24px;
-padding:20px;
-border-radius:15px;
+padding:22px;
+border-radius:18px;
 text-decoration:none;
-margin-top:20px;
+margin:28px auto 0;
+max-width:520px;
+box-shadow:0 0 28px rgba(83,252,24,.35);
 }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.step{
-background:#070707;
-padding:20px;
-border-radius:15px;
-border:1px solid #2b2b2b;
-}
-
-.step h3{
-color:#53fc18;
-margin-top:0;
+.highlight{
+border:1px solid #53fc18;
+box-shadow:0 0 30px rgba(83,252,24,.12);
 }
 
 @media(max-width:700px){
-
-.hero h1{
-font-size:42px;
+.container{padding:14px}
+.hero{padding:45px 10px 30px}
+.hero h1{font-size:54px}
+.hero h2{font-size:24px}
+.hero p{font-size:16px}
+.cta{font-size:19px;padding:18px}
 }
-
-.hero h2{
-font-size:28px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-<div class="hero">
-
+<section class="hero">
+<div class="badge">EN LIVE 24/7 SUR KICK.COM/POSTY78</div>
 <h1>70 000€</h1>
+<h2>À GAGNER</h2>
+<p>365 jours sans argent • 1500 McDonald's • Plus de 2200 gagnants</p>
+<a class="cta" href="https://recompense.posty78.fr">VÉRIFIER MON BILLET</a>
+</section>
 
-<h2>À GAGNER EN LIVE</h2>
+<section class="stats">
+<div class="stat"><strong>365</strong>jours d'aventure</div>
+<div class="stat"><strong>1500</strong>McDonald's à visiter</div>
+<div class="stat"><strong>2200+</strong>gagnants</div>
+<div class="stat"><strong>24/7</strong>en direct</div>
+</section>
 
-<p>
-365 jours sans argent • En direct 24h/24 • Plus de 2200 gagnants
-</p>
-
-</div>
-
-<div class="card">
-
+<section class="card highlight">
 <h2>Le projet</h2>
-
 <p>
 Pendant 365 jours, Posty78 traverse la France sans argent,
 visite les 1500 McDonald's du pays et distribue plus de
 70 000€ de cadeaux en direct.
 </p>
+</section>
 
-</div>
-
-<div class="card">
-
-<h2>Répartition des gains</h2>
+<section class="card">
+<h2>Répartition des billets collectors</h2>
 
 <div class="grid">
-
-<div class="reward">
-<div class="gain">500€</div>
-10 billets
+<div class="reward"><div class="gain">500€</div>10 billets</div>
+<div class="reward"><div class="gain">100€</div>40 billets</div>
+<div class="reward"><div class="gain">50€</div>100 billets</div>
+<div class="reward"><div class="gain">30€</div>200 billets</div>
+<div class="reward"><div class="gain">20€</div>500 billets</div>
+<div class="reward"><div class="gain">10€</div>650 billets</div>
 </div>
 
-<div class="reward">
-<div class="gain">100€</div>
-40 billets
-</div>
-
-<div class="reward">
-<div class="gain">50€</div>
-100 billets
-</div>
-
-<div class="reward">
-<div class="gain">30€</div>
-200 billets
-</div>
-
-<div class="reward">
-<div class="gain">20€</div>
-500 billets
-</div>
-
-<div class="reward">
-<div class="gain">10€</div>
-650 billets
-</div>
-
-</div>
-
-<p style="text-align:center;margin-top:20px;">
+<p style="text-align:center;margin-top:22px;font-size:20px;">
 Tous les billets sont gagnants.
 </p>
+</section>
 
-</div>
-
-<div class="card">
-
-<h2>Comment gagner ?</h2>
+<section class="card">
+<h2>Comment gagner un billet ?</h2>
 
 <div class="steps">
-
-<div class="step">
-<h3>💪 Force</h3>
-Pompes<br>
-Haltère bras tendu
+<div class="step"><h3>💪 Force</h3>Pompes<br>Haltère bras tendu</div>
+<div class="step"><h3>🎯 Précision</h3>Lancer d'anneaux<br>Lancer de balles</div>
+<div class="step"><h3>🤹 Dextérité</h3>Bottle Flip<br>Empiler 10 dés</div>
+<div class="step"><h3>⚖️ Équilibre</h3>Tenir sur un pied<br>Jonglage balle ping-pong</div>
 </div>
+</section>
 
-<div class="step">
-<h3>🎯 Précision</h3>
-Lancer d'anneaux<br>
-Lancer de balles
-</div>
-
-<div class="step">
-<h3>🤹 Dextérité</h3>
-Bottle Flip<br>
-Empiler 10 dés
-</div>
-
-<div class="step">
-<h3>⚖️ Équilibre</h3>
-Tenir sur un pied<br>
-Jonglage balle ping-pong
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
+<section class="card highlight">
 <h2>Comment réclamer son gain ?</h2>
+<p>1. Prends une photo de ton billet.</p>
+<p>2. Chaque billet possède un numéro unique et un code secret unique.</p>
+<p>3. Vérifie ton billet et suis les instructions de réclamation.</p>
 
-<p>
-1. Prends une photo de ton billet.
-</p>
-
-<p>
-2. Chaque billet possède un numéro unique et un code secret unique.
-</p>
-
-<p>
-3. Vérifie ton billet et suis les instructions de réclamation.
-</p>
-
-<a class="cta" href="https://recompense.posty78.fr">
-VÉRIFIER MON BILLET
-</a>
+<a class="cta" href="https://recompense.posty78.fr">VÉRIFIER MON BILLET</a>
+</section>
 
 </div>
-
-<div class="card">
-
-<h2>Objectif</h2>
-
-<p style="font-size:24px;text-align:center;">
-Visiter les 1500 McDonald's de France
-</p>
-
-</div>
-
-</div>
-
 </body>
 </html>
