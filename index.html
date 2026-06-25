@@ -1,298 +1,805 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giveaway Posty78</title>
-<link rel="icon" type="image/png" href="flavicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Réclame ton gain — Tour de France des 1500 McDo — Posty78" />
+  <title>Réclame ton gain — Posty78</title>
 
-<style>
-*{box-sizing:border-box}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:
-    radial-gradient(circle at top,#153f08 0%,#050505 38%,#000 100%);
-  color:#fff;
-}
+  <style>
+    /* ─── Variables ────────────────────────────────────────────────────── */
+    :root {
+      --bg:         #0a0a0a;
+      --bg-card:    rgba(0,0,0,0.75);
+      --border:     rgba(0,255,0,0.25);
+      --green:      #00ff00;
+      --green-dim:  rgba(0,255,0,0.1);
+      --gold:       #f59e0b;
+      --gold-dim:   rgba(245,158,11,0.15);
+      --white:      #ffffff;
+      --muted:      #557755;
+      --font:       "Inter", system-ui, sans-serif;
+      --mono:       "JetBrains Mono", monospace;
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --transition: 200ms cubic-bezier(0.4,0,0.2,1);
+    }
 
-.container{
-  max-width:1150px;
-  margin:auto;
-  padding:22px;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-.hero{
-  text-align:center;
-  padding:42px 18px;
-  border:1px solid #53fc18;
-  border-radius:28px;
-  background:rgba(0,0,0,.72);
-  box-shadow:0 0 35px rgba(83,252,24,.18);
-}
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.site{
-  display:inline-block;
-  border:2px solid #53fc18;
-  border-radius:16px;
-  padding:10px 18px;
-  color:#53fc18;
-  font-weight:900;
-  margin-bottom:20px;
-}
+    a { color: inherit; text-decoration: none; }
 
-h1{
-  font-size:74px;
-  margin:0;
-  line-height:.95;
-}
+    /* ─── Header ───────────────────────────────────────────────────────── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
 
-.green{color:#53fc18}
+    .header__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.subtitle{
-  font-size:28px;
-  font-weight:900;
-  margin-top:16px;
-}
+    .header__brand { display: flex; flex-direction: column; gap: 2px; }
 
-.notice{
-  margin:24px auto 0;
-  max-width:850px;
-  font-size:22px;
-  line-height:1.4;
-  color:#ddd;
-}
+    .header__eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+    }
 
-.card{
-  background:rgba(10,10,10,.9);
-  border:1px solid #252525;
-  border-radius:24px;
-  padding:24px;
-  margin-top:22px;
-}
+    .header__name {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
 
-.card h2{
-  color:#53fc18;
-  margin-top:0;
-  font-size:30px;
-}
+    .header__kick {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--green-dim);
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: var(--radius-md);
+      transition: all var(--transition);
+      text-shadow: 0 0 8px var(--green);
+    }
 
-.steps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
-}
+    .header__kick:hover {
+      background: rgba(0,255,0,0.18);
+      border-color: var(--green);
+    }
 
-.step{
-  border:1px solid #53fc18;
-  border-radius:22px;
-  padding:22px;
-  background:#060606;
-  text-align:center;
-}
+    /* ─── Hero ─────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 70px 24px 50px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at top, rgba(0,255,0,0.04) 0%, transparent 70%);
+    }
 
-.num{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#53fc18;
-  color:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:-48px auto 16px;
-  font-size:30px;
-  font-weight:900;
-}
+    .hero__inner { max-width: 700px; margin: 0 auto; }
 
-.step h3{
-  font-size:24px;
-  margin:0 0 14px;
-}
+    .hero__lock {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
 
-.icon{
-  font-size:52px;
-  margin:12px 0;
-}
+    .hero__eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-shadow: 0 0 10px var(--green);
+      margin-bottom: 12px;
+      display: block;
+    }
 
-.step p{
-  color:#ddd;
-  line-height:1.5;
-}
+    .hero__title {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px rgba(0,255,0,0.15);
+    }
 
-.contacts{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
-}
+    .hero__title span {
+      color: var(--green);
+      text-shadow: 0 0 20px var(--green);
+    }
 
-.contact{
-  display:block;
-  text-decoration:none;
-  color:#fff;
-  border-radius:22px;
-  padding:24px;
-  border:1px solid #333;
-  background:#070707;
-}
+    .hero__sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-.contact.discord{
-  border-color:#5865F2;
-}
+    /* ─── Stats ────────────────────────────────────────────────────────── */
+    .stats {
+      padding: 32px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,255,0,0.02);
+    }
 
-.contact.insta{
-  border-color:#ff3f8f;
-}
+    .stats__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
 
-.contact strong{
-  display:block;
-  font-size:30px;
-  margin-bottom:10px;
-}
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
 
-.contact span{
-  color:#53fc18;
-  font-size:24px;
-  font-weight:900;
-}
+    .stat__value {
+      font-size: 26px;
+      font-weight: 900;
+      font-family: var(--mono);
+      color: var(--green);
+      text-shadow: 0 0 10px var(--green);
+    }
 
-.cta{
-  display:block;
-  text-align:center;
-  background:#53fc18;
-  color:#000;
-  text-decoration:none;
-  border-radius:20px;
-  padding:22px;
-  font-size:28px;
-  font-weight:900;
-  box-shadow:0 0 30px rgba(83,252,24,.35);
-}
+    .stat__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;
-  margin-top:22px;
-}
+    /* ─── Section titre ─────────────────────────────────────────────────── */
+    .section { padding: 60px 24px; }
+    .section--alt { background: rgba(0,255,0,0.015); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-.stat{
-  background:#070707;
-  border:1px solid #2d2d2d;
-  border-radius:18px;
-  padding:18px;
-  text-align:center;
-}
+    .section__inner { max-width: 1100px; margin: 0 auto; }
 
-.stat strong{
-  display:block;
-  color:#53fc18;
-  font-size:28px;
-}
+    .section__title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+      text-align: center;
+      margin-bottom: 8px;
+    }
 
-.footer{
-  text-align:center;
-  color:#53fc18;
-  font-weight:900;
-  font-size:22px;
-  margin:26px 0 10px;
-}
+    .section__heading {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: -0.01em;
+    }
 
-@media(max-width:700px){
-  .container{padding:12px}
-  h1{font-size:44px}
-  .subtitle{font-size:20px}
-  .notice{font-size:17px}
-  .card h2{font-size:24px}
-  .cta{font-size:21px}
-}
-</style>
+    /* ─── Défis ─────────────────────────────────────────────────────────── */
+    .defis__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .defi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .defi-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .defi-card__icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .defi-card__title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .defi-card__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .defi-card__list li {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      padding: 4px 10px;
+      background: rgba(0,255,0,0.04);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0,255,0,0.1);
+    }
+
+    /* ─── Gains ─────────────────────────────────────────────────────────── */
+    .gains__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .gain-item {
+      border-radius: var(--radius-md);
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: transform var(--transition);
+    }
+
+    .gain-item:hover { transform: translateY(-3px); }
+
+    .gain-item__amount { font-size: 28px; font-weight: 900; font-family: var(--mono); }
+    .gain-item__count  { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; opacity: 0.75; }
+
+    .gain-item--500 { background: linear-gradient(135deg,#2d1a00,#5c3800); border: 2px solid #f59e0b; }
+    .gain-item--500 .gain-item__amount { color: #f59e0b; text-shadow: 0 0 14px #f59e0b; }
+    .gain-item--500 .gain-item__count  { color: rgba(245,158,11,0.7); }
+
+    .gain-item--100 { background: linear-gradient(135deg,#1a1a2e,#2d2d5c); border: 2px solid #818cf8; }
+    .gain-item--100 .gain-item__amount { color: #818cf8; text-shadow: 0 0 14px #818cf8; }
+    .gain-item--100 .gain-item__count  { color: rgba(129,140,248,0.7); }
+
+    .gain-item--50 { background: linear-gradient(135deg,#001a10,#003320); border: 2px solid #00ff00; }
+    .gain-item--50 .gain-item__amount  { color: #00ff00; text-shadow: 0 0 14px #00ff00; }
+    .gain-item--50 .gain-item__count   { color: rgba(0,255,0,0.7); }
+
+    .gain-item--30 { background: linear-gradient(135deg,#1a0020,#35004a); border: 2px solid #c084fc; }
+    .gain-item--30 .gain-item__amount  { color: #c084fc; text-shadow: 0 0 14px #c084fc; }
+    .gain-item--30 .gain-item__count   { color: rgba(192,132,252,0.7); }
+
+    .gain-item--20 { background: linear-gradient(135deg,#001a1a,#003333); border: 2px solid #22d3ee; }
+    .gain-item--20 .gain-item__amount  { color: #22d3ee; text-shadow: 0 0 14px #22d3ee; }
+    .gain-item--20 .gain-item__count   { color: rgba(34,211,238,0.7); }
+
+    .gain-item--10 { background: linear-gradient(135deg,#1a1a1a,#2d2d2d); border: 2px solid #9ca3af; }
+    .gain-item--10 .gain-item__amount  { color: #9ca3af; }
+    .gain-item--10 .gain-item__count   { color: rgba(156,163,175,0.7); }
+
+    .gains__mention {
+      text-align: center;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--green);
+      margin-top: 8px;
+    }
+
+    /* ─── Étapes ─────────────────────────────────────────────────────────── */
+    .etapes__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .etape-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .etape-card__num {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      background: var(--green);
+      color: #000;
+      font-size: 13px;
+      font-weight: 900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px rgba(0,255,0,0.5);
+    }
+
+    .etape-card__icon { font-size: 36px; line-height: 1; margin-top: 8px; }
+
+    .etape-card__title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .etape-card__desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    /* ─── Contact ─────────────────────────────────────────────────────────── */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 28px 20px;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border);
+      background: var(--bg-card);
+      transition: all var(--transition);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .contact-btn:hover {
+      border-color: var(--green);
+      background: rgba(0,255,0,0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0,255,0,0.15);
+    }
+
+    .contact-btn__icon { font-size: 36px; }
+
+    .contact-btn__platform {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--green);
+      text-shadow: 0 0 8px var(--green);
+      letter-spacing: 0.04em;
+    }
+
+    .contact-btn__handle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      font-family: var(--mono);
+    }
+
+    .contact-btn__action {
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      background: var(--green);
+      padding: 6px 16px;
+      border-radius: 99px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── Liens utiles ────────────────────────────────────────────────────── */
+    .links__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .link-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 20px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-align: center;
+      transition: all var(--transition);
+      backdrop-filter: blur(8px);
+    }
+
+    .link-card:hover {
+      border-color: var(--green);
+      background: rgba(0,255,0,0.05);
+      transform: translateY(-2px);
+    }
+
+    .link-card__icon { font-size: 24px; }
+
+    .link-card__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .link-card__url {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      text-shadow: 0 0 6px rgba(0,255,0,0.3);
+    }
+
+    /* ─── Footer ──────────────────────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .footer__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .footer__name {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--green);
+      text-shadow: 0 0 10px var(--green);
+    }
+
+    .footer__links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer__links a {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+
+    .footer__links a:hover { color: var(--green); }
+
+    .footer__legal {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    /* ─── Responsive ──────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .defis__grid   { grid-template-columns: repeat(2, 1fr); }
+      .etapes__grid  { grid-template-columns: repeat(2, 1fr); }
+      .gains__grid   { grid-template-columns: repeat(2, 1fr); }
+      .links__grid   { grid-template-columns: repeat(2, 1fr); }
+      .stats__inner  { grid-template-columns: repeat(2, 1fr); }
+      .hero__title   { font-size: 36px; }
+    }
+
+    @media (max-width: 480px) {
+      .defis__grid   { grid-template-columns: 1fr; }
+      .etapes__grid  { grid-template-columns: 1fr; }
+      .contact__grid { grid-template-columns: 1fr; }
+      .links__grid   { grid-template-columns: repeat(2, 1fr); }
+      .hero__title   { font-size: 28px; }
+      .hero__lock    { font-size: 36px; }
+      .section__heading { font-size: 24px; }
+      .header__name  { font-size: 22px; }
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
 
+<!-- ─── Header ──────────────────────────────────────────────────────────── -->
+<header class="header">
+  <div class="header__inner">
+    <div class="header__brand">
+      <span class="header__eyebrow">Tour de France des 1500 McDo</span>
+      <span class="header__name">Posty78</span>
+    </div>
+    <a href="https://kick.com/posty78" target="_blank" class="header__kick">
+      🟢 kick.com/posty78
+    </a>
+  </div>
+</header>
+
+<!-- ─── Hero ────────────────────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="site">🔒 giveaway.posty78.fr</div>
-  <h1>FÉLICITATIONS !</h1>
-  <div class="subtitle">TU DÉTIENS UN BILLET DU <span class="green">TOUR DE FRANCE POSTY78</span></div>
-  <p class="notice">
-    Tu as gagné ou trouvé une carte avec un code unique.
-    Suis les étapes ci-dessous pour récupérer ta récompense.
-  </p>
+  <div class="hero__inner">
+    <span class="hero__lock">🎉</span>
+    <span class="hero__eyebrow">🔒 giveaway.posty78.fr</span>
+    <h1 class="hero__title">FÉLICITATIONS !<br><span>Tu as un billet gagnant !</span></h1>
+    <p class="hero__sub">Tu détiens un billet collector du Tour de France des 1500 McDo. Suis les étapes ci-dessous pour récupérer ta récompense.</p>
+  </div>
 </section>
 
-<section class="card">
-  <h2>Comment réclamer ton gain ?</h2>
-
-  <div class="steps">
-    <div class="step">
-      <div class="num">1</div>
-      <h3>PRENDS UNE PHOTO</h3>
-      <div class="icon">📸</div>
-      <p>Prends une photo nette de la carte entière. Le code alphanumérique doit être parfaitement visible.</p>
+<!-- ─── Stats ───────────────────────────────────────────────────────────── -->
+<div class="stats">
+  <div class="stats__inner">
+    <div class="stat">
+      <span class="stat__value">70 000€+</span>
+      <span class="stat__label">À gagner</span>
     </div>
-
-    <div class="step">
-      <div class="num">2</div>
-      <h3>AJOUTE TON MOYEN DE PAIEMENT</h3>
-      <div class="icon">💳</div>
-      <p>Dans ton message, indique ton moyen de paiement : PayPal ou Revolut.</p>
+    <div class="stat">
+      <span class="stat__value">1 500</span>
+      <span class="stat__label">Billets uniques</span>
     </div>
-
-    <div class="step">
-      <div class="num">3</div>
-      <h3>ENVOIE TON MESSAGE</h3>
-      <div class="icon">✈️</div>
-      <p>Envoie ta photo + ton moyen de paiement en message privé sur Discord ou Instagram.</p>
+    <div class="stat">
+      <span class="stat__value">365</span>
+      <span class="stat__label">Jours de voyage</span>
     </div>
+    <div class="stat">
+      <span class="stat__value">100%</span>
+      <span class="stat__label">Gagnants</span>
+    </div>
+  </div>
+</div>
 
-    <div class="step">
-      <div class="num">4</div>
-      <h3>ATTENDS LA VALIDATION</h3>
-      <div class="icon">🎁</div>
-      <p>Je vérifie ton billet, je valide, puis je t’envoie ta récompense.</p>
+<!-- ─── Défis ───────────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="section__inner">
+    <p class="section__title">🏆 Comment gagner un billet ?</p>
+    <h2 class="section__heading">Relève un défi en live !</h2>
+
+    <div class="defis__grid">
+
+      <div class="defi-card">
+        <span class="defi-card__icon">💪</span>
+        <span class="defi-card__title">Force</span>
+        <ul class="defi-card__list">
+          <li>Pompes</li>
+          <li>Haltère bras tendu</li>
+        </ul>
+      </div>
+
+      <div class="defi-card">
+        <span class="defi-card__icon">🎯</span>
+        <span class="defi-card__title">Précision</span>
+        <ul class="defi-card__list">
+          <li>Lancer d'anneaux</li>
+          <li>Lancer de sacs</li>
+        </ul>
+      </div>
+
+      <div class="defi-card">
+        <span class="defi-card__icon">🤹</span>
+        <span class="defi-card__title">Dextérité</span>
+        <ul class="defi-card__list">
+          <li>Bottle Flip</li>
+          <li>Empiler 10 dés</li>
+        </ul>
+      </div>
+
+      <div class="defi-card">
+        <span class="defi-card__icon">⚖️</span>
+        <span class="defi-card__title">Équilibre</span>
+        <ul class="defi-card__list">
+          <li>Tenir sur un pied</li>
+          <li>Jongler à une main</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="card">
-  <h2>Tu peux me contacter ici</h2>
+<!-- ─── Gains ───────────────────────────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="section__inner">
+    <p class="section__title">💰 Répartition des gains</p>
+    <h2 class="section__heading">Tous les billets sont gagnants</h2>
 
-  <div class="contacts">
-    <a class="contact discord" href="https://discord.posty78.fr">
-      <strong>DISCORD</strong>
-      MP pseudo : <span>#jd1819</span><br><br>
-      Rejoins le serveur : <span>discord.posty78.fr</span>
-    </a>
-
-    <a class="contact insta" href="https://insta.posty78.fr">
-      <strong>INSTAGRAM</strong>
-      MP : <span>@posty.78</span><br><br>
-      Lien direct : <span>insta.posty78.fr</span>
-    </a>
+    <div class="gains__grid">
+      <div class="gain-item gain-item--500">
+        <span class="gain-item__amount">500 €</span>
+        <span class="gain-item__count">10 billets</span>
+      </div>
+      <div class="gain-item gain-item--100">
+        <span class="gain-item__amount">100 €</span>
+        <span class="gain-item__count">40 billets</span>
+      </div>
+      <div class="gain-item gain-item--50">
+        <span class="gain-item__amount">50 €</span>
+        <span class="gain-item__count">100 billets</span>
+      </div>
+      <div class="gain-item gain-item--30">
+        <span class="gain-item__amount">30 €</span>
+        <span class="gain-item__count">200 billets</span>
+      </div>
+      <div class="gain-item gain-item--20">
+        <span class="gain-item__amount">20 €</span>
+        <span class="gain-item__count">500 billets</span>
+      </div>
+      <div class="gain-item gain-item--10">
+        <span class="gain-item__amount">10 €</span>
+        <span class="gain-item__count">650 billets</span>
+      </div>
+    </div>
+    <p class="gains__mention">🎁 Montant minimum garanti : 10 € — Total : 72 000 €</p>
   </div>
 </section>
 
-<section class="card">
-  <h2>Consulte la liste des récompenses</h2>
-  <a class="cta" href="https://recompense.posty78.fr">
-    VOIR LES RÉCOMPENSES
-  </a>
+<!-- ─── Étapes ──────────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="section__inner">
+    <p class="section__title">📋 Procédure de réclamation</p>
+    <h2 class="section__heading">Comment réclamer ton gain ?</h2>
+
+    <div class="etapes__grid">
+
+      <div class="etape-card">
+        <span class="etape-card__num">1</span>
+        <span class="etape-card__icon">📸</span>
+        <span class="etape-card__title">Prends une photo</span>
+        <p class="etape-card__desc">Prends une photo nette de ta carte entière. Le code alphanumérique doit être parfaitement visible.</p>
+      </div>
+
+      <div class="etape-card">
+        <span class="etape-card__num">2</span>
+        <span class="etape-card__icon">💳</span>
+        <span class="etape-card__title">Prépare ton paiement</span>
+        <p class="etape-card__desc">Indique ton moyen de paiement : ton compte <strong>PayPal</strong> ou ton numéro <strong>Revolut</strong>.</p>
+      </div>
+
+      <div class="etape-card">
+        <span class="etape-card__num">3</span>
+        <span class="etape-card__icon">✉️</span>
+        <span class="etape-card__title">Envoie en MP</span>
+        <p class="etape-card__desc">Envoie ta photo + ton moyen de paiement en message privé sur Discord ou Instagram.</p>
+      </div>
+
+      <div class="etape-card">
+        <span class="etape-card__num">4</span>
+        <span class="etape-card__icon">🎁</span>
+        <span class="etape-card__title">Reçois ton gain</span>
+        <p class="etape-card__desc">Je vérifie ton billet et je t'envoie ta récompense sous 48 à 72 heures ouvrées.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section class="stats">
-  <div class="stat"><strong>365 jours</strong>sans argent</div>
-  <div class="stat"><strong>1500</strong>McDo de France</div>
-  <div class="stat"><strong>24/7</strong>en live sur Kick</div>
-  <div class="stat"><strong>70 000€+</strong>à gagner</div>
+<!-- ─── Contact ─────────────────────────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="section__inner">
+    <p class="section__title">📩 Me contacter</p>
+    <h2 class="section__heading">Envoie ton message ici</h2>
+
+    <div class="contact__grid">
+
+      <a href="https://discord.posty78.fr" target="_blank" class="contact-btn">
+        <span class="contact-btn__icon">🎮</span>
+        <span class="contact-btn__platform">DISCORD</span>
+        <span class="contact-btn__handle">MP pseudo : #jd1819</span>
+        <span class="contact-btn__handle">discord.posty78.fr</span>
+        <span class="contact-btn__action">Ouvrir Discord →</span>
+      </a>
+
+      <a href="https://insta.posty78.fr" target="_blank" class="contact-btn">
+        <span class="contact-btn__icon">📸</span>
+        <span class="contact-btn__platform">INSTAGRAM</span>
+        <span class="contact-btn__handle">MP : @posty.78</span>
+        <span class="contact-btn__handle">insta.posty78.fr</span>
+        <span class="contact-btn__action">Ouvrir Instagram →</span>
+      </a>
+
+    </div>
+  </div>
 </section>
 
-<div class="footer">
-  MERCI DE FAIRE PARTIE DE CETTE INCROYABLE AVENTURE
-</div>
+<!-- ─── Liens utiles ─────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="section__inner">
+    <p class="section__title">🔗 Liens utiles</p>
+    <h2 class="section__heading">Tout le projet en un clic</h2>
 
-</div>
+    <div class="links__grid">
+
+      <a href="https://recompense.posty78.fr" target="_blank" class="link-card">
+        <span class="link-card__icon">🔍</span>
+        <span class="link-card__label">Vérifier un billet</span>
+        <span class="link-card__url">recompense.posty78.fr</span>
+      </a>
+
+      <a href="https://maps.posty78.fr" target="_blank" class="link-card">
+        <span class="link-card__icon">🗺️</span>
+        <span class="link-card__label">Carte du parcours</span>
+        <span class="link-card__url">maps.posty78.fr</span>
+      </a>
+
+      <a href="https://kick.com/posty78" target="_blank" class="link-card">
+        <span class="link-card__icon">🟢</span>
+        <span class="link-card__label">Live Kick</span>
+        <span class="link-card__url">kick.com/posty78</span>
+      </a>
+
+      <a href="https://recompense.posty78.fr/reglement" target="_blank" class="link-card">
+        <span class="link-card__icon">📄</span>
+        <span class="link-card__label">Règlement officiel</span>
+        <span class="link-card__url">Consulter →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ──────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__name">Posty78</span>
+    <div class="footer__links">
+      <a href="https://kick.com/posty78" target="_blank">kick.com/posty78</a>
+      <a href="https://recompense.posty78.fr" target="_blank">recompense.posty78.fr</a>
+      <a href="https://maps.posty78.fr" target="_blank">maps.posty78.fr</a>
+      <a href="https://discord.posty78.fr" target="_blank">discord.posty78.fr</a>
+      <a href="https://insta.posty78.fr" target="_blank">insta.posty78.fr</a>
+      <a href="https://recompense.posty78.fr/reglement" target="_blank">Règlement</a>
+    </div>
+    <p class="footer__legal">
+      Ce projet est une initiative personnelle et indépendante. Aucun établissement de restauration rapide n'est partenaire, sponsor ou affilié. — Jean-Didier BARATA — SIRET : 102 191 756 00026
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
