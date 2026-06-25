@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fond noir -->
+  <rect width="64" height="64" rx="12" fill="#000000"/>
+  
+  <!-- Ruban horizontal -->
+  <rect x="8" y="28" width="48" height="8" rx="2" fill="#00ff00"/>
+  
+  <!-- Ruban vertical -->
+  <rect x="28" y="8" width="8" height="48" rx="2" fill="#00ff00"/>
+  
+  <!-- Boîte cadeau bas -->
+  <rect x="10" y="36" width="44" height="22" rx="4" fill="#003300"/>
+  <rect x="10" y="36" width="44" height="22" rx="4" fill="none" stroke="#00ff00" stroke-width="2"/>
+  
+  <!-- Boîte cadeau haut -->
+  <rect x="8" y="26" width="48" height="12" rx="3" fill="#004400"/>
+  <rect x="8" y="26" width="48" height="12" rx="3" fill="none" stroke="#00ff00" stroke-width="2"/>
+  
+  <!-- Nœud gauche -->
+  <ellipse cx="26" cy="22" rx="8" ry="5" transform="rotate(-30 26 22)" fill="#006600" stroke="#00ff00" stroke-width="1.5"/>
+  
+  <!-- Nœud droit -->
+  <ellipse cx="38" cy="22" rx="8" ry="5" transform="rotate(30 38 22)" fill="#006600" stroke="#00ff00" stroke-width="1.5"/>
+  
+  <!-- Centre du nœud -->
+  <circle cx="32" cy="22" r="4" fill="#00ff00"/>
+
+  <!-- Reflet lumineux -->
+  <circle cx="32" cy="22" r="2" fill="#aaffaa"/>
+</svg>
